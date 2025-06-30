@@ -1,0 +1,122 @@
+.resume-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #333;
+
+  .resume-title {
+    font-size: 32px;
+    margin-top: 4rem;
+    margin-bottom: 30px;
+    color: #222;
+    text-align: left;
+  }
+
+  .resume-content {
+    .resume-section {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .experience-section {
+      display: flex;
+      gap: 20rem; // Adjust this gap as needed
+
+      .section-title {
+        flex: 0 0 150px; // Fixed width for section title
+        font-size: 20px;
+        color: #AB876D;
+        padding-bottom: 10px;
+        text-align: left;
+      }
+
+      .experience-list {
+        flex: 1; // Takes remaining space
+      }
+    }
+
+    .experience-item {
+      margin-bottom: 25px;
+
+      .job-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+        color: #222;
+        text-align: left;
+      }
+
+      .job-meta {
+        color: #666;
+        margin-bottom: 10px;
+        font-size: 16px;
+        text-align: left;
+
+      }
+
+      .job-description {
+        color: #444;
+        line-height: 1.5;
+        padding-bottom: 3rem;
+        border-bottom: 2px solid #493628;
+      }
+    }
+
+    .skills-section {
+      display: flex;
+      gap: 40px; // Same as experience section for alignment
+
+      .section-title {
+        flex: 0 0 150px; // Same width as experience section title
+        font-size: 20px;
+        color: #AB876D;
+        padding-bottom: 10px;
+        text-align: left;
+      }
+
+      .skills-list {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .skill-tag {
+          background-color: #f5f5f5;
+          padding: 8px 15px;
+          border-radius: 20px;
+          font-size: 14px;
+          color: #444;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 20px 15px;
+
+    .resume-title {
+      font-size: 28px;
+    }
+
+    .experience-section,
+    .skills-section {
+      flex-direction: column;
+      gap: 20px;
+      
+      .section-title {
+        flex: 1 1 100%;
+      }
+    }
+
+    .skills-list {
+      gap: 8px;
+      
+      .skill-tag {
+        padding: 6px 12px;
+      }
+    }
+  }
+}
