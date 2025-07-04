@@ -15,25 +15,37 @@ const TopNavbar = () => {
   ];
 
   return (
-    <nav className="top-nav-container">
-      <ul className="top-nav-list">
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <button
-              onClick={() => navigate(`/${item.id === 'home' ? '' : item.id}`)}
-              className={`top-nav-item ${
-                location.pathname === `/${item.id}` || 
-                (item.id === 'home' && location.pathname === '/') 
-                  ? 'active' 
-                  : ''
-              }`}
-            >
-              {item.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <header className="navbar-header">
+
+      <div className="logo-name-container" onClick={() => navigate('/')}>
+        <img 
+          src={process.env.PUBLIC_URL + '/images/irishlogo.png'} 
+          alt="Irish Roxas" 
+          className="profile-logo"
+        />
+      </div>
+
+      {/* Navigation on the right */}
+      <nav className="top-nav-container">
+        <ul className="top-nav-list">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => navigate(`/${item.id === 'home' ? '' : item.id}`)}
+                className={`top-nav-item ${
+                  location.pathname === `/${item.id}` || 
+                  (item.id === 'home' && location.pathname === '/') 
+                    ? 'active' 
+                    : ''
+                }`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 };
 

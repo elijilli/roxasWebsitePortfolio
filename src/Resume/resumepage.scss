@@ -1,122 +1,65 @@
+// resumepage.scss
 .resume-container {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Raleway', sans-serif;
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 2rem;
   padding: 40px 20px;
   color: #333;
+  opacity: 0; /* Initial state for animation */
+  animation: fadeIn 1s ease forwards; /* Added to container */
 
-  .resume-title {
-    font-size: 32px;
-    margin-top: 4rem;
-    margin-bottom: 30px;
-    color: #222;
-    text-align: left;
+  &.fade-in {
+    animation: fadeIn 1s ease forwards;
   }
 
-  .resume-content {
-    .resume-section {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+  .section-title {
+    font-size: 28px;
+    margin: 2rem 0 1rem;
+    color: #222;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.2s forwards; /* Staggered animation */
+  }
+
+  .content-card {
+    background-color: #ffffff4d;
+    border-radius: 15px;
+    padding: 24px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.4s forwards; /* Staggered animation */
+    
+    &.fade-in {
+      animation: fadeIn 1s ease 0.4s forwards;
     }
+  }
 
-    .experience-section {
-      display: flex;
-      gap: 20rem; // Adjust this gap as needed
+  /* Rest of your existing styles... */
+  .position-title {
+    font-size: 22px;
+    margin: 0 0 0.5rem;
+    color: #222;
+    font-weight: 400;
+  }
 
-      .section-title {
-        flex: 0 0 150px; // Fixed width for section title
-        font-size: 20px;
-        color: #AB876D;
-        padding-bottom: 10px;
-        text-align: left;
-      }
+  /* ... (keep all other existing styles) ... */
 
-      .experience-list {
-        flex: 1; // Takes remaining space
-      }
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-
-    .experience-item {
-      margin-bottom: 25px;
-
-      .job-title {
-        font-size: 20px;
-        margin-bottom: 5px;
-        color: #222;
-        text-align: left;
-      }
-
-      .job-meta {
-        color: #666;
-        margin-bottom: 10px;
-        font-size: 16px;
-        text-align: left;
-
-      }
-
-      .job-description {
-        color: #444;
-        line-height: 1.5;
-        padding-bottom: 3rem;
-        border-bottom: 2px solid #493628;
-      }
-    }
-
-    .skills-section {
-      display: flex;
-      gap: 40px; // Same as experience section for alignment
-
-      .section-title {
-        flex: 0 0 150px; // Same width as experience section title
-        font-size: 20px;
-        color: #AB876D;
-        padding-bottom: 10px;
-        text-align: left;
-      }
-
-      .skills-list {
-        flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-
-        .skill-tag {
-          background-color: #f5f5f5;
-          padding: 8px 15px;
-          border-radius: 20px;
-          font-size: 14px;
-          color: #444;
-        }
-      }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
 
 @media (max-width: 768px) {
-  .resume-container {
-    padding: 20px 15px;
-
-    .resume-title {
-      font-size: 28px;
-    }
-
-    .experience-section,
-    .skills-section {
-      flex-direction: column;
-      gap: 20px;
-      
-      .section-title {
-        flex: 1 1 100%;
-      }
-    }
-
-    .skills-list {
-      gap: 8px;
-      
-      .skill-tag {
-        padding: 6px 12px;
-      }
-    }
-  }
+  /* ... (keep existing media queries) ... */
 }

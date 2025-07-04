@@ -1,8 +1,36 @@
-.top-nav-container {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background-color: #E4E0E1;
+  z-index: 1000;
+}
 
+.logo-name-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .profile-logo {
+    width: 120px;
+    height: 60px;
+    object-fit: cover;
+    
+  }
+}
+
+.top-nav-container {
   .top-nav-list {
     display: flex;
     gap: 1.5rem;
@@ -29,9 +57,6 @@
       &.active {
         color: #AB876D;
         font-weight: 600;
-        position: relative;
-        gap: 2rem;
-
 
         &::after {
           content: '';
@@ -41,7 +66,6 @@
           right: 1rem;
           height: 2px;
           background-color: #AB876D;
-          
         }
       }
     }
@@ -49,9 +73,17 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo-name-container {
+    margin-bottom: 1rem;
+  }
+
   .top-nav-container {
-    position: static;
-    margin-bottom: 2rem;
+    width: 100%;
     
     .top-nav-list {
       justify-content: center;

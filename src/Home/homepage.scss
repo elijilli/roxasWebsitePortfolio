@@ -21,6 +21,13 @@
   z-index: 10;
 }
 
+.profile-logo {
+  width: 150px; // Adjust as needed
+  height: 150px; // Adjust as needed
+  object-fit: cover;
+  border-left: -10;
+}
+
 /* Top Navigation Bar */
 .top-nav-container {
   position: absolute;

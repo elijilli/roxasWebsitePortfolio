@@ -10,8 +10,6 @@ const HomepageComponent = () => {
 
   return (
     <div className="App">
-      <h1 className="nameNavbar">Irish B. Roxas</h1>
-      
 
       <Outlet />
       
